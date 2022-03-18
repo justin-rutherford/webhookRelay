@@ -2,19 +2,33 @@
   "name": "webhookrelay",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "targets": {
+    "main": false,
+    "default": {
+      "includeNodeModules": true,
+      "distDir": "./build",
+      "source": "src/index.js",
+      "isLibrary": true,
+      "optimize": true
+    }
+  },
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
-    "build": "parcel build index.js --target node --bundle-node-modules --no-source-maps --out-dir build"
+    "build": "parcel build --no-source-maps"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "parcel": "^1.12.4"
+    "axios": "^0.26.1"
   },
   "devDependencies": {
-    "eslint": "^7.16.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "parcel": "^2.3.2",
+    "process": "^0.11.10"
   }
 }
